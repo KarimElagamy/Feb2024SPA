@@ -1,1 +1,11 @@
-<p>product-list works!</p>
+<h2>Here is our list of products:</h2>
+<div *ngFor="let product of productsList">
+    <p>Id: {{product.Id}}</p>
+    <p>Name: {{product.Name}}</p>
+</div>
+
+<div *ngIf="productsList.length < 4">
+    <p>Products List has less than 10 items!</p>
+</div>
+
+<input type="text" [(ngModel)]="productsList[1].Name" >
