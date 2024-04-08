@@ -1,11 +1,17 @@
-<h2>Here is our list of products:</h2>
-<div *ngFor="let product of productsList">
+<h2>Here is our Sample List of Products:</h2>
+<div *ngFor="let product of sampleProductsList">
     <p>Id: {{product.Id}}</p>
     <p>Name: {{product.Name}}</p>
 </div>
 
-<div *ngIf="productsList.length < 4">
+<div *ngIf="sampleProductsList.length < 4">
     <p>Products List has less than 10 items!</p>
 </div>
 
-<input type="text" [(ngModel)]="productsList[1].Name" >
+<input type="text" [(ngModel)]="sampleProductsList[1].Name" >
+
+<h2>Here is our Real List of Products From the API:</h2>
+<div *ngFor="let product of ourProductsListFromAPI">
+    <p>Id: {{product.Id}}</p>
+    <p>Name: {{product.Name}}</p>
+</div>

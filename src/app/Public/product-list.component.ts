@@ -12,16 +12,19 @@ export class ProductListComponent implements OnInit {
 
 constructor(private productService:ProductService) { }
 
-productsList:Product[] = [];
+sampleProductsList:Product[] = [];
+ourProductsListFromAPI:Product[] = [];
 
 ngOnInit(): void {
   for(let i = 0; i < 5; i++){
-    this.productsList.push({Id: i, Name: "Example"});
+    this.sampleProductsList.push({Id: i, Name: "Example"});
   }
 
-  console.log(this.productsList);
+  console.log(this.sampleProductsList);
 
-  var ourProductsList = this.productService.GetProductList();
+  this.productService.GetProductList().subscribe(p => {
+    this.ourProductsListFromAPI = p;
+    console.log(this.ourProductsListFromAPI);
+  });
 }
-
 }
