@@ -41,7 +41,7 @@ export class AccountService {
 
   validateJWT(){
     //Code to validate token goes here
-    var tokenValue = localStorage.getItem('token');
+    var tokenValue = localStorage.getItem('token'); 
     if (tokenValue != null){
       const decodedToken = this.jwtHelper.decodeToken(tokenValue);
       this.isLoggedInSubject.next(true);
